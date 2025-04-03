@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Reportes del Sistema</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-desktop"></i> Reporte del Sistema</h1>
+            <div class="controls">
+                <input type="file" id="jsonFile" accept=".json">
+                <button id="loadBtn"><i class="fas fa-upload"></i> Cargar JSON</button>
+                <button id="refreshBtn"><i class="fas fa-sync-alt"></i> Actualizar</button>
+            </div>
+            <div class="file-info">
+                <span id="fileName">No se ha seleccionado archivo</span>
+                <span id="fileDate"></span>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="system-overview">
+                <div class="overview-card">
+                    <h3><i class="fas fa-microchip"></i> Procesador</h3>
+                    <p id="processorInfo">-</p>
+                </div>
+                <div class="overview-card">
+                    <h3><i class="fas fa-memory"></i> Memoria RAM</h3>
+                    <p id="ramInfo">-</p>
+                </div>
+                <div class="overview-card">
+                    <h3><i class="fas fa-hdd"></i> Almacenamiento</h3>
+                    <p id="storageInfo">-</p>
+                </div>
+                <div class="overview-card">
+                    <h3><i class="fas fa-clock"></i> Tiempo Activo</h3>
+                    <p id="uptimeInfo">-</p>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="hardware"><i class="fas fa-server"></i> Hardware</button>
+                <button class="tab-btn" data-tab="software"><i class="fas fa-code"></i> Software</button>
+                <button class="tab-btn" data-tab="network"><i class="fas fa-network-wired"></i> Red</button>
+                <button class="tab-btn" data-tab="security"><i class="fas fa-shield-alt"></i> Seguridad</button>
+            </div>
+
+            <div class="tab-content active" id="hardware-tab">
+                <!-- Contenido dinámico se insertará aquí -->
+            </div>
+
+            <div class="tab-content" id="software-tab">
+                <!-- Contenido dinámico se insertará aquí -->
+            </div>
+
+            <div class="tab-content" id="network-tab">
+                <!-- Contenido dinámico se insertará aquí -->
+            </div>
+
+            <div class="tab-content" id="security-tab">
+                <!-- Contenido dinámico se insertará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
