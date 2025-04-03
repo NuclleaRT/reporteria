@@ -6,6 +6,7 @@
     <title>Visualizador de Reportes del Sistema</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <div class="container">
@@ -15,6 +16,9 @@
                 <input type="file" id="jsonFile" accept=".json">
                 <button id="loadBtn"><i class="fas fa-upload"></i> Cargar JSON</button>
                 <button id="refreshBtn"><i class="fas fa-sync-alt"></i> Actualizar</button>
+                <button id="exportPdf"><i class="fas fa-file-pdf"></i> Exportar PDF</button>
+                <button id="darkModeToggle"><i class="fas fa-moon"></i> Modo Oscuro</button>
+                <button id="compareReports"><i class="fas fa-balance-scale"></i> Comparar</button>
             </div>
             <div class="file-info">
                 <span id="fileName">No se ha seleccionado archivo</span>
@@ -50,23 +54,37 @@
             </div>
 
             <div class="tab-content active" id="hardware-tab">
-                <!-- Contenido dinámico se insertará aquí -->
+                <!-- Se llena dinámicamente -->
             </div>
 
             <div class="tab-content" id="software-tab">
-                <!-- Contenido dinámico se insertará aquí -->
+                <div class="search-box">
+                    <input type="text" id="programSearch" placeholder="Buscar programas...">
+                </div>
+                <!-- Resto del contenido dinámico -->
             </div>
 
             <div class="tab-content" id="network-tab">
-                <!-- Contenido dinámico se insertará aquí -->
+                <!-- Se llena dinámicamente -->
             </div>
 
             <div class="tab-content" id="security-tab">
-                <!-- Contenido dinámico se insertará aquí -->
+                <!-- Se llena dinámicamente -->
             </div>
         </div>
     </div>
 
+    <!-- Modal para comparación -->
+    <div id="compareModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Comparar Reportes</h2>
+            <div class="compare-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

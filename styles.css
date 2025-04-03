@@ -7,6 +7,8 @@
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
     --gray-color: #95a5a6;
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
 }
 
 * {
@@ -76,6 +78,12 @@ button:hover {
 input[type="file"] {
     background-color: var(--light-color);
     border: 1px solid var(--gray-color);
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-top: 20px;
 }
 
 .file-info {
@@ -189,4 +197,120 @@ input[type="file"] {
         overflow-x: auto;
         white-space: nowrap;
     }
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+}
+
+body.dark-mode .container,
+body.dark-mode header,
+body.dark-mode .dashboard,
+body.dark-mode .data-card,
+body.dark-mode .overview-card {
+    background-color: var(--dark-card);
+    color: #ffffff;
+    border-color: #333;
+}
+
+body.dark-mode .data-table th,
+body.dark-mode .data-table td {
+    border-color: #444;
+}
+
+/* Gráficos */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+}
+
+/* Buscador */
+.search-box {
+    margin: 15px 0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--dark-card);
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Alertas */
+.alert {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 4px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
